@@ -1,5 +1,7 @@
 var svg_container = d3.select("svg");
 				
+// Created our huge sliding line, this is our background
+// that slides in
 var slide_line = svg_container.append('line')
 			.attr("x1", 300)
 			.attr("y1", -1300)
@@ -7,6 +9,7 @@ var slide_line = svg_container.append('line')
 			.attr("y2", 300)
 			.attr("class", "slide");
 
+// Drow our grill lines
 for (var i = 0; i < 21; i++) {
 	svg_container.append('line')
 				.attr("x1", i * 110)
@@ -16,12 +19,13 @@ for (var i = 0; i < 21; i++) {
 				.attr("class", "grill");
 }
 
-d3.select('body').on("click", function() {
-  		slide_line.transition()
-		.attr("x1", 1000)
-		.attr("y1", 0)
-		.attr("x2", 0)
-		.attr("y2", 1000)
-		.duration(60000)
-		.ease('linear');
-	});
+// Start the slide on load
+if (num_mili_seconds > 0) {
+    slide_line.transition()
+    	.attr("x1", 1000)
+    	.attr("y1", 0)
+    	.attr("x2", 0)
+    	.attr("y2", 1000)
+    	.duration(num_mili_seconds)
+    	.ease('linear');
+}

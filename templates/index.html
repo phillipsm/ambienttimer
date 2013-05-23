@@ -6,8 +6,7 @@
 	<title>Ambient Timer</title>
 	
 	<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-	
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>	
 	
 	<style type="text/css" media="screen">
 	body {
@@ -18,9 +17,9 @@
 	
 	#instructions {
 		min-width: 560px;
-		min-height: 210px;
+		min-height: 240px;
 		max-width: 560px;
-		max-height: 250px;
+		max-height: 240px;
 		border: 2px solid #5C4A39;
 		position: absolute;
 		left: 50px;
@@ -53,6 +52,14 @@
 		text-decoration: none;
 	}
 	
+	.hidden { 
+	  position: absolute; 
+	  overflow: hidden; 
+	  clip: rect(0 0 0 0); 
+	  height: 1px; width: 1px; 
+	  margin: -1px; padding: 0; border: 0; 
+	}
+	
 	svg {
 		display:block;
 		position:absolute;
@@ -60,10 +67,12 @@
 		width: 100%;
 		height: 100%;
 	}
+	
 	svg .slide {
 		stroke: #77D1A5;
 		stroke-width: 1410;
 	}
+	
 	svg .grill {
 		stroke: #77D1A5;
 		stroke-width: 25;
@@ -75,14 +84,16 @@
 <body>
 	<svg viewBox="0 0 1000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
 	
-	<div id="instructions">
+	<div id="instructions" {% if num_mili_secs != 0 %} class="hidden" {% endif %}>
 		<p class="heading">Ambient Timer</p>
 		<p class="desc">A low-stress, visual timer</p>
-		<p>Set the timer in the URL. If you want 20 minutes, <a href="/20:00">ambienttimer.com/20:00</a></p>
+		<p>Set the timer in the URL</p>
+		<p>If you want 1 minute, 20 seconds, <a href="/1:20">ambienttimer.com/1:20</a></p>
 		<p>If you want 2 hours, 20 minutes, 17 seconds, <a href="/2:20:17">ambienttimer.com/2:20:17</a></p>
 		
 	</div>
-	<script src="ambienttimer.js" charset="utf-8"></script>
+	<script>var num_mili_seconds = {{num_mili_secs}}</script>
+	<script src="/static/ambienttimer.js" charset="utf-8"></script>
 </body>
 </html>
 
