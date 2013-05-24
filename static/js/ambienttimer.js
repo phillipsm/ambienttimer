@@ -20,12 +20,12 @@ for (var i = 0; i < 21; i++) {
 }
 
 // Start the slide on load
-if (num_mili_seconds > 0) {
+if (num_millisecs > 0) {
     slide_line.transition()
     	.attr("x1", 1000)
     	.attr("y1", 0)
     	.attr("x2", 0)
     	.attr("y2", 1000)
-    	.duration(num_mili_seconds)
+    	.duration(num_millisecs)
     	.ease('linear');
 }

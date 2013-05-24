@@ -1,9 +1,40 @@
 <!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	
+	<!--
+           _         _    _         _     _____ _               
+          /_\  _ __ | |__(_)___ _ _| |_  |_   _(_)_ __  ___ _ _ 
+         / _ \| '  \| '_ \ / -_) ' \  _|   | | | | '  \/ -_) '_|
+        /_/ \_\_|_|_|_.__/_\___|_||_\__|   |_| |_|_|_|_\___|_|
+	
 
+	Thanks for looking. Made with love by Matt Phillips. Find me at http://notesonthe.net
+	-->
+	
+	
 	<title>Ambient Timer</title>
+
+	<meta charset="utf-8">
+	<meta name="description" content="A low-stress, visual timer" />
+
+	<meta name="twitter:card" content="photo">
+	<meta name="twitter:creator" content="@labratmatt">
+	<meta name="twitter:url" content="http://ambienttimer.com">
+	<meta name="twitter:title" content="Ambient Timer">
+	<meta name="twitter:description" content="A low-stress, visual timer">
+	<meta name="twitter:image" content="http://ambienttimer.com/static/img/ambient-timer-thumb.png">
+	<meta name="twitter:image:width" content="500">
+	<meta name="twitter:image:height" content="311">
+
+	<meta property="og:title" content="Ambient Timer"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="http://ambienttimer.com"/>
+	<meta property="og:image" content="http://ambienttimer.com/static/img/ambient-timer-thumb.png"/>
+	<meta property="og:site_name" content="Ambient Timer"/>
+	<meta property="og:description" content="A low-stress, visual timer"/>
+
+	
 	<link rel="icon" type="image/png" href="/static/img/favicon.png">
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>	
 	
@@ -84,14 +115,14 @@
 <body>
 	<svg viewBox="0 0 1000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
 	
-	<div id="instructions" {% if num_mili_secs != 0 %} class="hidden" {% endif %}>
+	<div id="instructions" {% if num_millisecs != 0 %} class="hidden" {% endif %}>
 		<p class="heading">Ambient Timer</p>
 		<p class="desc">A low-stress, visual timer</p>
 		<p>Set your desired time in the URL.</p>
 		<p>If you want 1 minute, 20 seconds, <a href="/1:20">ambienttimer.com/1:20</a></p>
 		<p>If you want 2 hours, 20 minutes, 17 seconds, <a href="/2:20:17">ambienttimer.com/2:20:17</a></p>
 	</div>
-	<script>var num_mili_seconds = {{num_mili_secs}}</script>
+	<script>var num_millisecs = {{num_millisecs}}</script>
 	<script src="/static/js/ambienttimer.js" charset="utf-8"></script>
 </body>
 </html>
