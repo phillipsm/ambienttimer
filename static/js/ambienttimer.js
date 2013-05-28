@@ -10,15 +10,10 @@ function launch_full_screen(element) {
 }
 
 // Detect if browser supports fullscreen
-function full_screen_enabled (element) {
-    if (element.webkitRequestFullScreen || element.mozRequestFullScreen || element.webkitRequestFullScreen) {
-        return true;
-    }
-    
-    return false;
+function full_screen_enabled(element) {
+    return element.webkitRequestFullScreen || element.mozRequestFullScreen || element.webkitRequestFullScreen;
 }
 
-// Detect if our browser supports fullscreen
 if (full_screen_enabled(document.documentElement)) {
     $('#full_screen_container').fadeIn(1000);
 }
@@ -26,7 +21,7 @@ if (full_screen_enabled(document.documentElement)) {
 $('#full_screen_container').on('click', function() {
     launch_full_screen(document.documentElement);
     $(this).fadeOut(2000);
-    });
+});
 
 
 // When full screen is exited
@@ -36,25 +31,25 @@ function on_fullscreen_exit() {
 
 // Listen for fullscreen exit (so we can fadein the fullscreen icon)
 if (full_screen_enabled(document.documentElement)) {
-document.addEventListener("fullscreenchange", function () {
-    if (!document.fullscreen) {
-        on_fullscreen_exit()
-    }
-}, false);
-document.addEventListener("mozfullscreenchange", function () {
-    if (!document.mozFullScreen) {
-        on_fullscreen_exit()
-    }
-}, false);
-document.addEventListener("webkitfullscreenchange", function () {
-    if (!document.webkitIsFullScreen) {
-        on_fullscreen_exit()
-    }
-}, false);
+    document.addEventListener("fullscreenchange", function () {
+        if (!document.fullscreen) {
+            on_fullscreen_exit()
+        }
+    }, false);
+    document.addEventListener("mozfullscreenchange", function () {
+        if (!document.mozFullScreen) {
+            on_fullscreen_exit()
+        }
+    }, false);
+    document.addEventListener("webkitfullscreenchange", function () {
+        if (!document.webkitIsFullScreen) {
+            on_fullscreen_exit()
+        }
+    }, false);
 
 
-// Fadeout fullscreen icon on load
-setTimeout(function(){
-        $('#full_screen_container').fadeOut(5000);
-    });
+    // Fadeout fullscreen icon on load
+    setTimeout(function(){
+            $('#full_screen_container').fadeOut(5000);
+        });
 }
