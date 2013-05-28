@@ -11,7 +11,18 @@ function launch_full_screen(element) {
 
 // Detect if browser supports fullscreen
 function full_screen_enabled(element) {
-    return element.webkitRequestFullScreen || element.mozRequestFullScreen || element.webkitRequestFullScreen;
+
+    // Test browser for fullscreen element
+    var full_screen_avail = element.webkitRequestFullScreen || element.mozRequestFullScreen || element.webkitRequestFullScreen;
+    
+    // If the browser is mobile, fullscreen seems spaztastic, so disable. 
+    var mobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);
+    
+    if (mobile) {
+        full_screen_avail = false;
+    }
+    
+    return full_screen_avail;
 }
 
 if (full_screen_enabled(document.documentElement)) {
