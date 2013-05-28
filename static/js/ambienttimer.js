@@ -1,4 +1,3 @@
-
 function launch_full_screen(element) {
     // Launch html5 fullscreen
     
@@ -28,14 +27,14 @@ function full_screen_enabled(element) {
 function on_fullscreen_exit() {
     // When full screen exists
     
-    $('#full_screen_container').fadeIn(3000).fadeOut(5000);
+    $('#full_screen_container').fadeIn(1000).fadeOut(4000);
 }
 
 if (full_screen_enabled(document.documentElement)) {
     // Show fullscreen icon and listen for fullscreen exit (so we can fadein the fullscreen icon)
     
     // FadeIn and Fadeout fullscreen icon on load
-    $('#full_screen_container').fadeIn(1000).fadeOut(5000);
+    $('#full_screen_container').fadeIn(1000).fadeOut(4000);
     
     document.addEventListener("fullscreenchange", function () {
         if (!document.fullscreen) {
@@ -59,5 +58,5 @@ if (full_screen_enabled(document.documentElement)) {
 // Our clickable, fullscreen element
 $('#full_screen_container').on('click', function() {
     launch_full_screen(document.documentElement);
-    $(this).fadeOut(2000);
+    $(this).fadeOut(1000);
 });
