@@ -9,7 +9,23 @@ function launch_full_screen(element) {
     }
 }
 
-$('#full_screen_container').fadeIn(1000);
+// Detect if browser supports fullscreen
+function full_screen_enabled (element) {
+    if (element.webkitRequestFullScreen || element.mozRequestFullScreen || element.webkitRequestFullScreen) {
+        return true;
+    }
+    
+    return false;
+}
+
+// Detect if our browser supports fullscreen
+if (full_screen_enabled(document.documentElement)) {
+        console.log('fullscreen support available');
+    $('#full_screen_container').fadeIn(1000);
+} else {
+    console.log('fullscreen support not available');
+}
+
 $('#full_screen_container').on('click', function() {
     launch_full_screen(document.documentElement);
     $(this).fadeOut(2000);
