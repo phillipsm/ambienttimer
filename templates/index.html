@@ -14,7 +14,6 @@
 	Find me at http://notesonthe.net
 	-->
 	
-	
 	<title>Ambient Timer</title>
 
 	<meta charset="utf-8">
@@ -39,14 +38,13 @@
 	
 	<link rel="icon" type="image/png" href="/static/img/favicon.png">
 	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>	
-	
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-	
+		
 	<style type="text/css" media="screen">
 	body {
 		background:#fefefe;
 		margin:0;
 		padding:0;
+		-webkit-text-size-adjust: 100%;
 	}
 	
 	#instructions {
@@ -89,11 +87,17 @@
 	
 	#full_screen_container {
 		right:20px;
-		bottom:20px;
+		bottom:10px;
 		position: absolute;
 		color: #989898;
-		filter: alpha(opacity=80);
-		opacity: 0.8;
+		filter: alpha(opacity=70);
+		opacity: 0.7;
+		background-image: url('/static/img/fullscreen.svg');
+	    padding: 2.4em;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+		cursor: pointer;
+	    cursor: hand;
 	}
 	
 	#full_screen_container:hover {
@@ -125,30 +129,58 @@
 	svg .grill {
 		stroke: #77D1A5;
 		stroke-width: 25;
-		/*-webkit-svg-shadow: 0 5px 13px #989898;*/
 	}
 	</style>
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-	<svg viewBox="0 0 1000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
-
-	{% if num_millisecs == 0 %}	
+	<svg viewBox="0 0 1000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	
+		{% if num_millisecs != 0 %}	
+		<line x1="300" y1="-1300" x2="-1300" y2="300" class="slide">
+			<animate attributeName="x1" from="300" to="1000" dur="{{num_millisecs}}ms" fill="freeze"/> 
+	        <animate attributeName="y1" from="-1300" to="0" dur="{{num_millisecs}}ms" fill="freeze"/>
+	        <animate attributeName="x2" from="-1300" to="0" dur="{{num_millisecs}}ms" fill="freeze"/> 
+	        <animate attributeName="y2" from="300" to="1000" dur="{{num_millisecs}}ms" fill="freeze"/>
+		</line>
+		{% endif %}
+	
+		<line x1="0" y1="-20" x2="-20" y2="0" class="grill"></line>
+		<line x1="110" y1="-20" x2="-20" y2="110" class="grill"></line>
+		<line x1="220" y1="-20" x2="-20" y2="220" class="grill"></line>
+		<line x1="330" y1="-20" x2="-20" y2="330" class="grill"></line>
+		<line x1="440" y1="-20" x2="-20" y2="440" class="grill"></line>
+		<line x1="550" y1="-20" x2="-20" y2="550" class="grill"></line>
+		<line x1="660" y1="-20" x2="-20" y2="660" class="grill"></line>
+		<line x1="770" y1="-20" x2="-20" y2="770" class="grill"></line>
+		<line x1="880" y1="-20" x2="-20" y2="880" class="grill"></line>
+		<line x1="990" y1="-20" x2="-20" y2="990" class="grill"></line>
+		<line x1="1100" y1="-20" x2="-20" y2="1100" class="grill"></line>
+		<line x1="1210" y1="-20" x2="-20" y2="1210" class="grill"></line>
+		<line x1="1320" y1="-20" x2="-20" y2="1320" class="grill"></line>
+		<line x1="1430" y1="-20" x2="-20" y2="1430" class="grill"></line>
+		<line x1="1540" y1="-20" x2="-20" y2="1540" class="grill"></line>
+		<line x1="1650" y1="-20" x2="-20" y2="1650" class="grill"></line>
+		<line x1="1760" y1="-20" x2="-20" y2="1760" class="grill"></line>
+		<line x1="1870" y1="-20" x2="-20" y2="1870" class="grill"></line>
+		<line x1="1980" y1="-20" x2="-20" y2="1980" class="grill"></line>
+		<line x1="2090" y1="-20" x2="-20" y2="2090" class="grill"></line>
+		<line x1="2200" y1="-20" x2="-20" y2="2200" class="grill"></line>
+	</svg>
+	
+	{% if num_millisecs == 0 %}
 	<div id="instructions" >
 		<p class="heading">Ambient Timer</p>
 		<p class="desc">A low-stress, visual timer</p>
 			
 		<p>Set your desired time in the URL.</p>
-		<p>If you want 1 minute, 20 seconds, <a href="/1:20">ambienttimer.com/1:20</a></p>
+		<p>For example, if you want 1 minute, 20 seconds, <a href="/1:20">ambienttimer.com/1:20</a></p>
 		<p>If you want 2 hours, 20 minutes, 17 seconds, <a href="/2:20:17">ambienttimer.com/2:20:17</a></p>
 	</div>
 	{% else %}
-	<div id="full_screen_container">
-		<i class="icon-desktop icon-2x"></i>
-	</div>
+	<div id="full_screen_container"></div>
 	{% endif %}
 	
-	<script>var num_millisecs = {{num_millisecs}}</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="/static/js/ambienttimer.js" charset="utf-8"></script>
 </body>
 </html>
