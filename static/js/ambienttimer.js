@@ -35,6 +35,7 @@ function on_fullscreen_exit() {
 }
 
 // Listen for fullscreen exit (so we can fadein the fullscreen icon)
+if (full_screen_enabled(document.documentElement)) {
 document.addEventListener("fullscreenchange", function () {
     if (!document.fullscreen) {
         on_fullscreen_exit()
@@ -51,7 +52,9 @@ document.addEventListener("webkitfullscreenchange", function () {
     }
 }, false);
 
+
 // Fadeout fullscreen icon on load
 setTimeout(function(){
         $('#full_screen_container').fadeOut(5000);
     });
+}
