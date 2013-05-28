@@ -9,6 +9,7 @@ function launch_full_screen(element) {
     }
 }
 
+$('#full_screen_container').fadeIn(1000);
 $('#full_screen_container').on('click', function() {
     launch_full_screen(document.documentElement);
     $(this).fadeOut(2000);
@@ -36,7 +37,6 @@ document.addEventListener("webkitfullscreenchange", function () {
         on_fullscreen_exit()
     }
 }, false);
-
 
 // Fadeout fullscreen icon on load
 setTimeout(function(){
