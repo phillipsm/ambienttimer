@@ -20,10 +20,7 @@ function full_screen_enabled (element) {
 
 // Detect if our browser supports fullscreen
 if (full_screen_enabled(document.documentElement)) {
-        console.log('fullscreen support available');
     $('#full_screen_container').fadeIn(1000);
-} else {
-    console.log('fullscreen support not available');
 }
 
 $('#full_screen_container').on('click', function() {
