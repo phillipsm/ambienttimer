@@ -1,3 +1,25 @@
+function swap_favicon(file_name){
+    $("#favicon").attr('href', file_name);
+}
+
+if (num_millisecs > 0) {
+    var facicons_to_show = [3,7];
+    
+    if (num_millisecs > 2500) {
+        facicons_to_show = [1,2,3,4,5,6,7];
+    }
+    
+    
+    
+    $.each( facicons_to_show, function( key, value ) {
+        setTimeout(function(){
+            console.log('swapping icon', '/static/img/favicon-' + key + '.png');
+            $("#favicon").attr('href', '/static/img/favicon-' + key + '.png');
+        }, num_millisecs/facicons_to_show.length);
+    });
+}
+
+
 function launch_full_screen(element) {
     // Launch html5 fullscreen
     
