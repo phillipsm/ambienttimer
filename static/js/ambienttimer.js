@@ -1,24 +1,33 @@
-function swap_favicon(file_name){
-    $("#favicon").attr('href', file_name);
+//////////////////////////////////////////////////////
+// Start favicon logic
+//////////////////////////////////////////////////////
+
+// We fill in the favicon as we fill in the window
+// if we have a short timer, only swap out a couple favicons
+var facicons_to_display [0,7];
+
+if (num_millisecs > 3000) {
+    facicons_to_display [0,1,2,3,4,5,6,7];
 }
 
-if (num_millisecs > 0) {
-    var facicons_to_show = [3,7];
-    
-    if (num_millisecs > 2500) {
-        facicons_to_show = [1,2,3,4,5,6,7];
+var num_favicons = favicons_to_display.length;
+
+var swap_favicon = function() {
+    if favicons_to_display.length > 0 {
+        $('favicon').attr('href', '/static/img/favicon-' + favicons_to_display[0] + '.png');
+        favicons_to_display.splice(0,1);
+        setTimeout(swap_favicon(), num_millisecs/num_favicons);
     }
-    
-    
-    
-    $.each( facicons_to_show, function( key, value ) {
-        setTimeout(function(){
-            console.log('swapping icon', '/static/img/favicon-' + key + '.png');
-            $("#favicon").attr('href', '/static/img/favicon-' + key + '.png');
-        }, num_millisecs/facicons_to_show.length);
-    });
 }
 
+//////////////////////////////////////////////////////
+// End favicon logic
+//////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////
+// Start fullscreen logic
+//////////////////////////////////////////////////////
 
 function launch_full_screen(element) {
     // Launch html5 fullscreen
@@ -82,3 +91,7 @@ $('#full_screen_container').on('click', function() {
     launch_full_screen(document.documentElement);
     $(this).fadeOut(1000);
 });
+
+//////////////////////////////////////////////////////
+// End fullscreen logic
+//////////////////////////////////////////////////////
