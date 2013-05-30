@@ -4,20 +4,25 @@
 
 // We fill in the favicon as we fill in the window
 // if we have a short timer, only swap out a couple favicons
-var facicons_to_display [0,7];
+var favicons_to_display = [0,7,15,23];
 
-if (num_millisecs > 3000) {
-    facicons_to_display [0,1,2,3,4,5,6,7];
+if (num_millisecs >= 3000) {
+    favicons_to_display = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
 }
 
-var num_favicons = favicons_to_display.length;
+var num_favicons = favicons_to_display.length - 1;
 
 var swap_favicon = function() {
-    if favicons_to_display.length > 0 {
-        $('favicon').attr('href', '/static/img/favicon-' + favicons_to_display[0] + '.png');
+    if (favicons_to_display.length > 0) {
+    
+        $('#favicon').attr('href', '/static/img/favicon-' + favicons_to_display[0] + '.png');
         favicons_to_display.splice(0,1);
-        setTimeout(swap_favicon(), num_millisecs/num_favicons);
+        setTimeout(swap_favicon, num_millisecs/num_favicons);
     }
+}
+
+if (num_millisecs != 0) {
+    swap_favicon();
 }
 
 //////////////////////////////////////////////////////
