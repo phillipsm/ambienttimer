@@ -14,7 +14,6 @@ var num_favicons = favicons_to_display.length - 1;
 
 var swap_favicon = function() {
     if (favicons_to_display.length > 0) {
-    
         $('#favicon').attr('href', '/static/img/favicon-' + favicons_to_display[0] + '.png');
         favicons_to_display.splice(0,1);
         setTimeout(swap_favicon, num_millisecs/num_favicons);
