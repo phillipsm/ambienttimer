@@ -39,8 +39,8 @@ if(/chrom(e|ium)|opera/.test(navigator.userAgent.toLowerCase())){
 // Fullscreen (view box with 100% height and width) in IE is beyond me. Fuck it.
 
 if(/msie/.test(navigator.userAgent.toLowerCase())){
-    $('.example').remove();
-    $("#instructions").append("AmbientTimer doesn't work so well in Internet Explore. Sorry. Can you give another browser a try?");
+    $('.example p').remove();
+    $("#instructions").append("<p>AmbientTimer doesn't work so well in Internet Explore. Sorry. Can you give another browser a try?</p>");
 }
 
 
