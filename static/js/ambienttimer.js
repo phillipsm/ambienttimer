@@ -40,7 +40,7 @@ if(/chrom(e|ium)|opera/.test(navigator.userAgent.toLowerCase())){
 
 if(/msie/.test(navigator.userAgent.toLowerCase())){
     $('.example p').remove();
-    $("#instructions").append("<p>AmbientTimer doesn't work so well in Internet Explore. Sorry. Can you give another browser a try?</p>");
+    $("#instructions").append("<p>AmbientTimer doesn't work so well in Internet Explorer. Sorry. Can you give it a go another browser?</p>");
 }
 
 
