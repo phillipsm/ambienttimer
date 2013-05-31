@@ -49,9 +49,9 @@
 	}
 	
 	#instructions {
-		width: 560px;
+		width: 530px;
 		height: 240px;
-		min-width: 560px;
+		min-width: 530px;
 		min-height: 240px;
 		border: 1px solid #77D1A5;
 		position: absolute;
@@ -80,7 +80,7 @@
 		line-height:0;
 		color: #989898;
 	}
-	
+
 	#instructions a {
 		color: #4889b3;
 		text-decoration: none;
@@ -88,23 +88,17 @@
 	
 	#full_screen_container {
 		display:none;
-		right:20px;
-		bottom:10px;
+		right:30px;
+		bottom:11px;
 		position: absolute;
-		color: #989898;
 		filter: alpha(opacity=70);
-		opacity: 0.7;
+		opacity: 0.70;
 		background-image: url('/static/img/fullscreen.svg');
-	    padding: 2.4em;
+	    padding: 2.3em;
 	    background-repeat: no-repeat;
 	    background-size: cover;
 		cursor: pointer;
 	    cursor: hand;
-	}
-	
-	#full_screen_container:hover {
-		filter: alpha(opacity=100);
-		opacity: 1;
 	}
 	
 	svg {
@@ -164,11 +158,13 @@
 	{% if num_millisecs == 0 %}
 	<div id="instructions" >
 		<p class="heading">Ambient Timer</p>
-		<p class="desc">A low-stress, visual timer</p>
-			
-		<p>Set your desired time in the URL.</p>
-		<p>For example, if you want 1 minute, 20 seconds, <a href="/1:20">ambienttimer.com/1:20</a></p>
-		<p>If you want 2 hours, 20 minutes, 17 seconds, <a href="/2:20:17">ambienttimer.com/2:20:17</a></p>
+		<p class="desc">A low-stress visual timer.</p>
+		
+		<div  class="example">	
+			<p>Set the timer in the URL.</p>
+			<p>1 minute, 20 seconds is at <a href="/1:20">ambienttimer.com/1:20</a></p>
+			<p>2 hours, 20 minutes, 17 seconds, is at <a href="/2:20:17">ambienttimer.com/2:20:17</a></p>
+		</div>
 	</div>
 	{% else %}
 	<div id="full_screen_container"></div>
