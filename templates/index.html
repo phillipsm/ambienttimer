@@ -49,22 +49,22 @@
 	}
 	
 	#instructions {
-		width: 530px;
-		height: 240px;
-		min-width: 530px;
-		min-height: 240px;
+		width: 525px;
+		height: 225px;
+		min-width: 525px;
+		min-height: 225px;
 		border: 1px solid #77D1A5;
 		position: absolute;
 		left: 5%;
-		bottom: 5%;
+		bottom: 6%;
 		background-color: #fefefe;
-		padding: 0 0 0 20px;
 	}
 	
 	#instructions p {
-		font: 15px/18px "oswald";
+		font: 15px/14px "oswald";
 		letter-spacing: .1em;
 		color: #5d5d5d;
+		margin-left: 20px;
 	}
 	
 	#instructions p.heading {
@@ -74,16 +74,16 @@
 	}
 	
 	#instructions p.desc {
-		margin-bottom:50px;
-		margin-left: 0px;
+		margin-bottom:47px;
 		margin-top: -7px;
-		line-height:0;
+		line-height: 0;
 		color: #989898;
 	}
 
 	#instructions a {
 		color: #4889b3;
 		text-decoration: none;
+		margin-left: 11px;
 	}
 	
 	#full_screen_container {
@@ -99,6 +99,27 @@
 	    background-size: cover;
 		cursor: pointer;
 	    cursor: hand;
+	}
+	
+	#credits_container {
+		right:15px;
+		bottom:0px;
+		position: absolute;
+		letter-spacing: .09em;
+		font: 12px/12px "oswald";
+		float:right;
+	}
+	
+	#credits_container a {
+		color: #5d5d5d;
+		text-decoration: none;
+		filter: alpha(opacity=70);
+		opacity: 0.70;
+	}
+	
+	#credits_container a:hover {
+		filter: alpha(opacity=95);
+		opacity: .95;
 	}
 	
 	svg {
@@ -160,12 +181,16 @@
 		<p class="heading">Ambient Timer</p>
 		<p class="desc">A low-stress visual timer</p>
 		
-		<div  class="example">	
+		<div class="example">	
 			<p>Set the timer in the URL</p>
-			<p>1 minute, 20 seconds is at <a href="/1:20">ambienttimer.com/1:20</a></p>
-			<p>2 hours, 20 minutes, 17 seconds is at <a href="/2:20:17">ambienttimer.com/2:20:17</a></p>
+			<p>1 minute, 20 seconds <a href="/1:20">ambienttimer.com/1:20</a></p>
+			<p>2 hours, 20 minutes, 17 seconds <a href="/2:20:17">ambienttimer.com/2:20:17</a></p>
 		</div>
+<!--		<p class="credits"><a href="http://notesonthe.net">notesonthe.net</a></p> -->
 	</div>
+	<div id="credits_container">
+<p class="credits"><a href="http://notesonthe.net" target="_blank">Created by notesonthe.net</a></p>
+		</div>
 	{% else %}
 	<div id="full_screen_container"></div>
 	{% endif %}
