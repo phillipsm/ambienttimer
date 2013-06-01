@@ -9,4 +9,4 @@ Give it a go at [http://ambienttimer.com](http://ambienttimer.com)
 
 ## License
 
-Ambient Timer is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License	](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+Ambient Timer is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
