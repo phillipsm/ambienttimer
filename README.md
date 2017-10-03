@@ -5,7 +5,7 @@ Ambient Timer
 
 Ambient Timer is a low-stress, visual timer. There are occasions when a ticking stopwatch is too exact and can add undue pressure. Ambient Timer helps you manage time without being pushy.
 
-Give it a go at [http://ambienttimer.com](http://ambienttimer.com)
+Give it a go at [https://ambienttimer.com](https://ambienttimer.com)
 
 ## License
 

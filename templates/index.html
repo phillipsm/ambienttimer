@@ -2,44 +2,44 @@
 <html xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 
 <head>
-	
+
 	<!--
-           _         _    _         _     _____ _               
-          /_\  _ __ | |__(_)___ _ _| |_  |_   _(_)_ __  ___ _ _ 
+           _         _    _         _     _____ _
+          /_\  _ __ | |__(_)___ _ _| |_  |_   _(_)_ __  ___ _ _
          / _ \| '  \| '_ \ / -_) ' \  _|   | | | | '  \/ -_) '_|
         /_/ \_\_|_|_|_.__/_\___|_||_\__|   |_| |_|_|_|_\___|_|
 
-	
-	Made with love by Matt Phillips. Thank you to my pals in the Lab for the help.
+
+	Made with care by Matt Phillips. Thank you to my pals in the Lab for the help.
 
 	Find me at http://mattphillips.info
 	-->
-	
+
 	<title>Ambient Timer</title>
 
 	<meta charset="utf-8">
 	<meta name="description" content="A low-stress, visual timer" />
 
 	<meta property="twitter:card" content="photo">
-	<meta property="twitter:creator" content="@labratmatt">
-	<meta property="twitter:url" content="http://ambienttimer.com">
+	<meta property="twitter:creator" content="@this_phillips">
+	<meta property="twitter:url" content="https://ambienttimer.com">
 	<meta property="twitter:title" content="Ambient Timer">
 	<meta property="twitter:description" content="A low-stress, visual timer">
-	<meta property="twitter:image" content="http://ambienttimer.com/static/img/ambient-timer-thumb.png">
+	<meta property="twitter:image" content="https://ambienttimer.com/static/img/ambient-timer-thumb.png">
 	<meta property="twitter:image:width" content="500">
 	<meta property="twitter:image:height" content="311">
 
 	<meta property="og:title" content="Ambient Timer"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="http://ambienttimer.com"/>
-	<meta property="og:image" content="http://ambienttimer.com/static/img/ambient-timer-thumb.png"/>
+	<meta property="og:url" content="//ambienttimer.com"/>
+	<meta property="og:image" content="https://ambienttimer.com/static/img/ambient-timer-thumb.png"/>
 	<meta property="og:site_name" content="Ambient Timer"/>
 	<meta property="og:description" content="A low-stress, visual timer"/>
 
 	<link rel="icon" type="image/png" href="/static/img/favicon-9.png" id="favicon">
 
-	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>	
-		
+	<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
 	<style type="text/css" media="screen">
 	body {
 		background:#fefefe;
@@ -47,7 +47,7 @@
 		padding:0;
 		-webkit-text-size-adjust: 100%;
 	}
-	
+
 	#instructions {
 		width: 525px;
 		height: 225px;
@@ -59,20 +59,20 @@
 		bottom: 6%;
 		background-color: #fefefe;
 	}
-	
+
 	#instructions p {
 		font: 15px/14px "oswald";
 		letter-spacing: .1em;
 		color: #5d5d5d;
 		margin-left: 20px;
 	}
-	
+
 	#instructions p.heading {
 		font: 44px "oswald";
 		line-height: 1px;
 		letter-spacing: normal;
 	}
-	
+
 	#instructions p.desc {
 		margin-bottom:47px;
 		margin-top: -7px;
@@ -85,7 +85,7 @@
 		text-decoration: none;
 		margin-left: 8px;
 	}
-	
+
 	#full_screen_container {
 		display:none;
 		right:30px;
@@ -100,7 +100,7 @@
 		cursor: pointer;
 	    cursor: hand;
 	}
-	
+
 	#credits_container {
 		right:15px;
 		bottom:0px;
@@ -109,19 +109,19 @@
 		font: 12px/12px "oswald";
 		float:right;
 	}
-	
+
 	#credits_container a {
 		color: #5d5d5d;
 		text-decoration: none;
 		filter: alpha(opacity=70);
 		opacity: 0.70;
 	}
-	
+
 	#credits_container a:hover {
 		filter: alpha(opacity=95);
 		opacity: .95;
 	}
-	
+
 	svg {
 		display:block;
 		position:absolute;
@@ -129,12 +129,12 @@
 		width: 100%;
 		height: 100%;
 	}
-	
+
 	svg .slide {
 		stroke: #77D1A5;
 		stroke-width: 1414;
 	}
-	
+
 	svg .grill {
 		stroke: #77D1A5;
 		stroke-width: 25;
@@ -143,16 +143,16 @@
 </head>
 <body>
 	<svg viewBox="0 0 1000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" version="1.1">
-	
-		{% if num_millisecs != 0 %}	
+
+		{% if num_millisecs != 0 %}
 		<line x1="300" y1="-1300" x2="-1300" y2="300" class="slide">
-			<animate attributeName="x1" from="300" to="1000" dur="{{num_millisecs}}ms" fill="freeze"/> 
+			<animate attributeName="x1" from="300" to="1000" dur="{{num_millisecs}}ms" fill="freeze"/>
 	        <animate attributeName="y1" from="-1300" to="0" dur="{{num_millisecs}}ms" fill="freeze"/>
-	        <animate attributeName="x2" from="-1300" to="0" dur="{{num_millisecs}}ms" fill="freeze"/> 
+	        <animate attributeName="x2" from="-1300" to="0" dur="{{num_millisecs}}ms" fill="freeze"/>
 	        <animate attributeName="y2" from="300" to="1000" dur="{{num_millisecs}}ms" fill="freeze"/>
 		</line>
 		{% endif %}
-	
+
 		<line x1="0" y1="-20" x2="-20" y2="0" class="grill"></line>
 		<line x1="110" y1="-20" x2="-20" y2="110" class="grill"></line>
 		<line x1="220" y1="-20" x2="-20" y2="220" class="grill"></line>
@@ -175,25 +175,25 @@
 		<line x1="2090" y1="-20" x2="-20" y2="2090" class="grill"></line>
 		<line x1="2200" y1="-20" x2="-20" y2="2200" class="grill"></line>
 	</svg>
-	
+
 	{% if num_millisecs == 0 %}
 	<div id="instructions" >
 		<p class="heading">Ambient Timer</p>
 		<p class="desc">A low-stress visual timer</p>
-		
-		<div class="example">	
+
+		<div class="example">
 			<p>Set the timer in the URL</p>
 			<p>1 minute, 20 seconds <a href="/1:20">ambienttimer.com/1m20s</a></p>
 			<p>2 hours, 20 minutes, 17 seconds <a href="/2:20:17">ambienttimer.com/2h20m17s</a></p>
 		</div>
 	</div>
 	<div id="credits_container">
-<p class="credits"><a href="http://mattphillips.info" target="_blank">a project by Matt Phillips</a></p>
+<p class="credits"><a href="https://mattphillips.info" target="_blank">a project by Matt Phillips</a></p>
 		</div>
 	{% else %}
 	<div id="full_screen_container"></div>
 	{% endif %}
-	
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript">
 		var num_millisecs  = {{num_millisecs}};
